@@ -279,13 +279,13 @@ console.log(transformedArray);*/
 
 =========================
 
-    Взяти описану колоду карт, та за допомоги reduce упакувати всі карти по "мастях" в об'єкт
-{
-    spades:[],
-        diamonds:[],
-    hearts:[],
-    clubs:[]
-}
+        Взяти описану колоду карт, та за допомоги reduce упакувати всі карти по "мастях" в об'єкт
+    {
+        spades:[],
+            diamonds:[],
+        hearts:[],
+        clubs:[]
+    }
 =========================*/
 
 let deck = [
@@ -327,6 +327,17 @@ let deck = [
     {cardSuit: 'clubs', value: 'king', color: 'black'}
 ];
 
+let packedDeck = deck.reduce(function(accumulator, card) {
+
+    if (!accumulator[card.cardSuit]) {
+        accumulator[card.cardSuit] = [];
+    }
+    accumulator[card.cardSuit].push(card);
+  return accumulator;
+}, { spade: [], diamond: [], heart: [], clubs: [] });
+
+console.log(packedDeck);
+
 /*function aceOnefind(arr) {
     for (let arrElement of arr) {
         if (arrElement.cardSuit === 'spade' && arrElement.value === 'ace') {
@@ -345,8 +356,10 @@ function aceOnefind(arr) {
     return arrCards
 }*/
 
+/*
 let result = deck.filter(function(arr) {
     return arr.cardSuit === 'clubs' && !['6', '7', '8'].includes(arr.value);
 });
 
 console.log(result)
+*/
