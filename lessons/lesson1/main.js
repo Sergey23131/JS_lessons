@@ -329,15 +329,13 @@ let deck = [
 
 let packedDeck = deck.reduce(function(accumulator, card) {
 
-    if (!accumulator[card.cardSuit]) {
-        accumulator[card.cardSuit] = [];
-    }
+
     accumulator[card.cardSuit].push(card);
   return accumulator;
 }, { spade: [], diamond: [], heart: [], clubs: [] });
 
 console.log(packedDeck);
-
+ 
 /*function aceOnefind(arr) {
     for (let arrElement of arr) {
         if (arrElement.cardSuit === 'spade' && arrElement.value === 'ace') {
