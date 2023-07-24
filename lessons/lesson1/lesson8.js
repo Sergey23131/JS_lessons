@@ -106,4 +106,4 @@ arrCars[1].info();
 console.log('///////////////////')
 arrCars[1].increaseMaxSpeed(320);
 console.log('///////////////////')
-arrCars[1].addDriver('Pasha')
+arrCars[1].addDriver('Pasha');
